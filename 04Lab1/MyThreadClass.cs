@@ -20,4 +20,4 @@ namespace _04Lab1
             }
         }
     }//myThreadClass
-}//namespace
+}//namespacee
