@@ -20,6 +20,9 @@ namespace _04Lab1
             btnStart.Enabled = false;
             lblStatus.Text = "Threads are running...";
 
+            Debug.WriteLine("-Before starting thread-");
+            System.Diagnostics.Trace.WriteLine("-Before starting thread-");
+
             ThreadStart threadStart1 = new ThreadStart(MyThreadClass.Thread1);
             ThreadStart threadStart2 = new ThreadStart(MyThreadClass.Thread1);
 

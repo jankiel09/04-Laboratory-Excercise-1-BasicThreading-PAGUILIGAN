@@ -13,7 +13,7 @@ namespace _04Lab1
     {
         public static void Thread1()
         {
-            for (int loopCount = 0; loopCount < 5; loopCount++)
+            for (int loopCount = 0; loopCount <= 5; loopCount++)
             {
                 Thread thread = Thread.CurrentThread;
                 string output = $"Name of Thread: {thread.Name} Process = {loopCount}";
