@@ -15,7 +15,38 @@ namespace _04Lab1
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            // greyed out the run button to isolate the process. prevent multiple clicks.
+            btnStart.Enabled = false;
+            lblStatus.Text = "Threads are running...";
+
+            ThreadStart threadStart1 = new ThreadStart(MyThreadClass.Thread1);
+            ThreadStart threadStart2 = new ThreadStart(MyThreadClass.Thread1);
+
+            // create two threads named ThreadA and ThreadB
+            ThreadA = new Thread(threadStart1);
+            ThreadB = new Thread(threadStart2);
+
+            // set thread names
+            ThreadA.Name = "ThreadA";
+            ThreadB.Name = "ThreadB";
+
+            Console.WriteLine("Starting ThreadA and ThreadB...");
+            Console.WriteLine("================================");
+
+            // start both threads
+            ThreadA.Start();
+            ThreadB.Start();
+
+            // Join() method to wait for both threads to complete
+            ThreadA.Join();
+            ThreadB.Join();
+
+            Console.WriteLine("================================");
+            Console.WriteLine("Both threads have completed.");
+
+            // update the label to show threads have ended
+            lblStatus.Text = "-End Of Thread-";
+            btnStart.Enabled = true; // un-grey the run button.
         }
     }
 }
