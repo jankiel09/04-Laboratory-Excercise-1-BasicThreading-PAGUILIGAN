@@ -1,5 +1,6 @@
 using System.Threading;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace _04Lab1
 {
@@ -40,6 +41,12 @@ namespace _04Lab1
             // Join() method to wait for both threads to complete
             ThreadA.Join();
             ThreadB.Join();
+
+
+            string endMessage = "-End of Thread-";
+            Debug.WriteLine(endMessage);
+            System.Diagnostics.Trace.WriteLine(endMessage);
+            Console.WriteLine(endMessage);
 
             Console.WriteLine("================================");
             Console.WriteLine("Both threads have completed.");
